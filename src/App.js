@@ -4,6 +4,7 @@ import Search from './components/Search';
 import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 import Route from './components/Route';
+import Header from './components/Header';
 
 
 const items = [
@@ -36,34 +37,6 @@ const options = [
     }
 ];
 
-const showAccordion = () => {
-    if(window.location.pathname==='/') {
-        return <Accordion items={items} />; 
-    }
-};
-
-const showList = () => {
-    if(window.location.pathname==='/list') {
-        return <Search />; 
-    }
-};
-
-const showDropdown = (selected, setSelected) => {
-    if(window.location.pathname==='/dropdown') {
-        return <Dropdown
-                options={options}
-                selected={selected}  
-                onSelectedChange={setSelected}  
-                />; 
-    }
-};
-
-const showTranslate = () => {
-    if(window.location.pathname==='/translate') {
-        return <Translate />; 
-    }
-};
-
 
 const App = () => {
 
@@ -71,11 +44,7 @@ const App = () => {
 
     return ( 
         <div className='ui container'>
-        <br />
-            {/* {showAccordion()}
-            {showList()}
-            {showDropdown(selected, setSelected)}
-            {showTranslate()} */}
+            <Header />
             <Route path="/">
                 <Accordion items={items} />
             </Route>

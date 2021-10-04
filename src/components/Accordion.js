@@ -32,10 +32,9 @@ const Accordion = ({items}) => {
     })
 
     return( 
-        <div className="ui styled accordion">
+        <div className="ui styled accordion segment">
             <h1>Accordion</h1>
             {renderedItems}
-            {/* <h1>{activeIndex}</h1> */}
         </div>
     )
 };
