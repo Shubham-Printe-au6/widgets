@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 
-const Dropdown = ({options, selected, onSelectedChange, label}) => {
+const Dropdown = ({options, selected, onSelectedChange, label, text}) => {
 
     const [open, setOpen] = useState(false);
     const ref = useRef();
@@ -54,7 +54,14 @@ const Dropdown = ({options, selected, onSelectedChange, label}) => {
                         {renderedOptions}
                     </div>
                 </div>
-                {/* <p style={{color:selected.value}}>This text changes color based on dropdown menu.</p> */}
+                {
+                    text 
+                    ?   <div className='ui segment'>
+                            <p style={{color:selected.value}}>{text}</p>
+                        </div>
+                    :   null
+                }
+                
             </div>
         </div>
     )
